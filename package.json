@@ -1,0 +1,28 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build":"parcel build index.html"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinthaHeshan/Forkify.git"
+  },
+  "author": "Sachintha heshan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachinthaHeshan/Forkify/issues"
+  },
+  "homepage": "https://github.com/sachinthaHeshan/Forkify#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1"
+  },
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}
