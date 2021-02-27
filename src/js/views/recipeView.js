@@ -29,6 +29,11 @@ export class RecipeView {
     this.#parentElement.innerHTML='';
     this.#parentElement.insertAdjacentHTML('afterbegin',markup)
   };
+  
+  addHandlerRender(handler){
+        window.addEventListener('hashchange',handler);
+        window.addEventListener('load',handler);
+  }
 
   #generateMarkup(){
     return `
