@@ -22,15 +22,15 @@ const controlRecipes = async function(){
     if(!id)return;
     recipeView.renderSpinner();
 
-    //loading recipes 
+    //1 loading recipes 
     await model.loadRecipe(id);
 
-    //rendering recipe..
+    //2 rendering recipe..
     recipeView.render(model.state.recipe); 
 
   }
   catch(error){
-    console.log(error);
+    recipeView.renderError();
   }
 };
 
