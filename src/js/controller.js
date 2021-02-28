@@ -1,13 +1,15 @@
 import * as model from './model.js';
-import recipeView from './views/recipeView.js'
-import searchView from './views/searchView.js'
+import recipeView from './views/recipeView.js';
+import searchView from './views/searchView.js';
+import resultsView from './views/resultsView.js';
 
 import 'core-js/stable';
-import 'regenerator-runtime/runtime'
+import 'regenerator-runtime/runtime';
 import {async} from 'regenerator-runtime';
 
-// const recipeContainer = document.querySelector('.recipe');
-
+if(module.hot){
+  module.hot.accept();
+}
 const controlRecipes = async function(){
   try{
     const id = window.location.hash.slice(1);
@@ -30,16 +32,19 @@ const controlRecipes = async function(){
 const controlSearchResults = async function(){
 
   try{
-    //get search quary
+    resultsView.renderSpinner();
+    // console.log(resultsView)
+
+    //1 get search quary
     const query = searchView.getQuery();
     if(!query) return;
      
-    //load search results
+    //2 load search results
     await model.loadSearchResults(query); 
 
-    //reder it
-    console.log(model.state.search.results)
-
+    //3 reder results
+    
+    resultsView.render(model.state.search.results);
   }catch(error){
     console.log(error)
   }
