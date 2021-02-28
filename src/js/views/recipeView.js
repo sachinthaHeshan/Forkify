@@ -1,7 +1,6 @@
 // import icons from '../img/icons.svg';
 import icons from 'url:../../img/icons.svg';
 import {Fraction} from 'fractional';
-console.log(Fraction);
 
 export class RecipeView {
   #parentElement = document.querySelector('.recipe');
@@ -143,6 +142,7 @@ export class RecipeView {
         </div>
     `;
   }
+
   #generatemarkupIngredient(ing) {
     return `
             <li class="recipe__ingredient">
