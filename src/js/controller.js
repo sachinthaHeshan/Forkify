@@ -43,8 +43,8 @@ const controlSearchResults = async function(){
     await model.loadSearchResults(query); 
 
     //3 reder results
-    
-    resultsView.render(model.state.search.results);
+    // resultsView.render(model.state.search.results);
+    resultsView.render(model.getSearchResultspage(1));
   }catch(error){
     console.log(error)
   }
@@ -55,4 +55,4 @@ const init = function(){
   searchView.addHandlerSearch(controlSearchResults);
 }; 
 
-init();
+init(); 
