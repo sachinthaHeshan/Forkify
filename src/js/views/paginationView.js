@@ -65,4 +65,4 @@ class PaginationView extends View{
     } 
 }
 
-export default PaginationView;
+export default new PaginationView();

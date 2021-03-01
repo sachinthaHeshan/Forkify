@@ -2,7 +2,6 @@ import View from './View.js';
 
 import icons from 'url:../../img/icons.svg';
 // import icons from 'url:../../img/icons.svg';
-console.log(icons)
 import {Fraction} from 'fractional';
 
 class RecipeView extends View {
@@ -19,9 +18,7 @@ class RecipeView extends View {
     this._parentElement.addEventListener('click',function(event){
       const btn = event.target.closest('.btn--tiny');
       if(!btn)return;
-      console.log(btn);
       const  {updateTo} = btn.dataset;
-      console.log(updateTo);
       if(+updateTo > 0) handler(+updateTo);
     });
   }
@@ -37,7 +34,7 @@ class RecipeView extends View {
   _generateMarkup(){
     return `
         <figure class="recipe__fig">
-          <img src="${this._data.image}" alt="Tomato" class="recipe__img" />
+          <img src="${this._data.image}" alt="${this._data.title}" class="recipe__img" />
           <h1 class="recipe__title">
             <span>P${this._data.title}</span>
           </h1>
@@ -72,7 +69,10 @@ class RecipeView extends View {
             </div>
           </div> 
 
-          <div class="recipe__user-generated">
+          <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
+          <svg>
+            <use href="${icons}#icon-user"></use>
+          </svg>
         </div>
 
           <button class="btn--round btn--bookmark">
