@@ -11,7 +11,8 @@ export default class View{
         this._clear();
         this._parentElement.insertAdjacentHTML('afterbegin',markup)
     } 
-    
+ 
+
     update(data){
       // if(!data || (Array.isArray(data)) && data.length === 0) return this.renderError();
 
@@ -27,7 +28,7 @@ export default class View{
         //update changed text
         newElements.forEach((newEl,i) =>{
           const curEl =curElements[i];
-          console.log(curEl,newEl.isEqualNode(curEl));
+          // console.log(curEl,newEl.isEqualNode(curEl));
 
           if(!newEl.isEqualNode(curEl) && newEl.firstChild?.nodeValue.trim() !== ''){
             // console.log('!@!@!',newEl.firstChild?.nodeValue.trim());
