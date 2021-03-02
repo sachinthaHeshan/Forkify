@@ -13,8 +13,8 @@ class RecipeView extends View {
         window.addEventListener('hashchange',handler);
         window.addEventListener('load',handler);
   }
-
-  addHanlerUpdateServings(handler){
+  
+  addHandlerUpdateServings(handler){
     this._parentElement.addEventListener('click',function(event){
       const btn = event.target.closest('.btn--tiny');
       if(!btn)return;

@@ -22,7 +22,7 @@ export default class View{
         this._data = data;
         const newMarkup = this._generateMarkup();
         
-        const newDom = document.createRange().createContextualFragment(newMarkup);
+        const newDOM = document.createRange().createContextualFragment(newMarkup);
         const newElements = Array.from(newDOM.querySelectorAll('*'));
         const curElements = Array.from(this._parentElement.querySelectorAll('*'));
 
@@ -38,8 +38,7 @@ export default class View{
 
           //update changed Attributes
           if(!newEl.isEqualNode(curEl)){
-            console.log(Array.from(newEl.attribute));
-            Array.from(newEl.attribute).forEach(attr =>
+            Array.from(newEl.attributes).forEach(attr =>
               curEl.setAttribute(attr.name,attr.value));
           }
         });

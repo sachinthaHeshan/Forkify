@@ -7,9 +7,9 @@ class ResultsView extends View{
     _errorMessage = `No Recipes found for ypur query! please try again!`;
     _message = '';
 
-    _generateMarkup(){
-        return this._data.map(this._generateMarkupPreview).join('');
-    }
+    _generateMarkup() {
+        return this._data.map(result => previewView.render(result, false)).join('');
+      }
 }
 
 export default new ResultsView();

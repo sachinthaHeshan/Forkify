@@ -63,7 +63,7 @@ export const loadSearchResults = async function(query){
                 title: rec.title,
                 publisher:rec.publisher,
                 image:rec.image_url,
-                ...rec(rec.key && {key: rec.key}),
+                ...(rec.key && {key: rec.key}),
             };
         });
         state.search.page = 1;
@@ -73,7 +73,7 @@ export const loadSearchResults = async function(query){
     }
 };
 
-export const getSearchResultspage = function(page = state.search.page){
+export const getSearchResultsPage = function(page = state.search.page){
     state.search.page = page;
 
     const start = (page - 1) * state.search.resultsPerPage; //0;
@@ -84,7 +84,7 @@ export const getSearchResultspage = function(page = state.search.page){
 
 export const updateServings = function(newServings){
     state.recipe.ingredients.forEach(ing => {
-        ing.quantity = (ingquantity * newServings) / state.recipe.servings;
+        ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
         // ing.quantity = 
     });
 
